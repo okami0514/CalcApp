@@ -16,11 +16,16 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
         val view = binding.root
         setContentView(view)
 
-        binding.button.setOnClickListener(this)
+        binding.button1.setOnClickListener(this)
+        binding.button2.setOnClickListener(this)
+        binding.button3.setOnClickListener(this)
+        binding.button4.setOnClickListener(this)
     }
 
     override fun onClick(v: View?) {
         val intent = Intent(this, SecondActivity::class.java)
+        intent.putExtra("VALUE1", 10)
+        intent.putExtra("VALUE2", 20)
         startActivity(intent)
     }
 }
