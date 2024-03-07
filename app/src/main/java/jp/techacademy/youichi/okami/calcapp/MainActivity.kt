@@ -26,13 +26,17 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
         // 共通化できそうだが研修早めにすすめたいので一旦下記方法ですすめる
         val button1 = findViewById<Button>(R.id.button1)
         button1.setOnClickListener{
-            var editTextVal = binding.editText.text.toString().toIntOrNull()
-            var editTextVal2 = binding.editText2.text.toString().toIntOrNull()
+            var editTextVal = binding.editText.text.toString().toDoubleOrNull()
+            var editTextVal2 = binding.editText2.text.toString().toDoubleOrNull()
 
             if (editTextVal != null && editTextVal2 != null) {
-                editTextVal = binding.editText.text.toString().toInt()
-                editTextVal2 = binding.editText2.text.toString().toInt()
-                intent.putExtra("VALUE1", editTextVal + editTextVal2)
+                editTextVal = binding.editText.text.toString().toDouble()
+                editTextVal2 = binding.editText2.text.toString().toDouble()
+
+                Log.d("UI_PARTS", editTextVal.toString())
+                Log.d("UI_PARTS", editTextVal2.toString())
+
+                intent.putExtra("VALUE1", editTextVal.plus(editTextVal2))
                 startActivity(intent)
             } else {
                 this.message(view)
@@ -41,13 +45,13 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
 
         val button2 = findViewById<Button>(R.id.button2)
         button2.setOnClickListener{
-            var editTextVal3 = binding.editText.text.toString().toIntOrNull()
-            var editTextVal4 = binding.editText2.text.toString().toIntOrNull()
+            var editTextVal3 = binding.editText.text.toString().toDoubleOrNull()
+            var editTextVal4 = binding.editText2.text.toString().toDoubleOrNull()
 
             if (editTextVal3 != null && editTextVal4 != null) {
-                editTextVal3 = binding.editText.text.toString().toInt()
-                editTextVal4 = binding.editText2.text.toString().toInt()
-                intent.putExtra("VALUE1", editTextVal3 - editTextVal4)
+                editTextVal3 = binding.editText.text.toString().toDouble()
+                editTextVal4 = binding.editText2.text.toString().toDouble()
+                intent.putExtra("VALUE1", editTextVal3.minus(editTextVal4))
                 startActivity(intent)
             } else {
                 this.message(view)

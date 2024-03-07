@@ -14,7 +14,7 @@ class SecondActivity : AppCompatActivity() {
         val view = binding.root
         setContentView(view)
 
-        val value1 = intent.getIntExtra("VALUE1", 0)
+        val value1 = intent.getDoubleExtra("VALUE1", 0.0)
 
         binding.textView.text = "${value1}"
     }
