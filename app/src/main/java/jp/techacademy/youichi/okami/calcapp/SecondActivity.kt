@@ -15,8 +15,7 @@ class SecondActivity : AppCompatActivity() {
         setContentView(view)
 
         val value1 = intent.getIntExtra("VALUE1", 0)
-        val value2 = intent.getIntExtra("VALUE2", 0)
 
-        binding.textView.text = "${value1 + value2}"
+        binding.textView.text = "${value1}"
     }
 }
