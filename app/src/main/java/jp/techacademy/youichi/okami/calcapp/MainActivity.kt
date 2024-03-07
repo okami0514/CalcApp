@@ -57,6 +57,36 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
                 this.message(view)
             }
         }
+
+        val button3 = findViewById<Button>(R.id.button3)
+        button3.setOnClickListener{
+            var editTextVal5 = binding.editText.text.toString().toDoubleOrNull()
+            var editTextVal6 = binding.editText2.text.toString().toDoubleOrNull()
+
+            if (editTextVal5 != null && editTextVal6 != null) {
+                editTextVal5 = binding.editText.text.toString().toDouble()
+                editTextVal6 = binding.editText2.text.toString().toDouble()
+                intent.putExtra("VALUE1", editTextVal5.times(editTextVal6))
+                startActivity(intent)
+            } else {
+                this.message(view)
+            }
+        }
+
+        val button4 = findViewById<Button>(R.id.button4)
+        button4.setOnClickListener{
+            var editTextVal7 = binding.editText.text.toString().toDoubleOrNull()
+            var editTextVal8 = binding.editText2.text.toString().toDoubleOrNull()
+
+            if (editTextVal7 != null && editTextVal8 != null) {
+                editTextVal7 = binding.editText.text.toString().toDouble()
+                editTextVal8 = binding.editText2.text.toString().toDouble()
+                intent.putExtra("VALUE1", editTextVal7.div(editTextVal8))
+                startActivity(intent)
+            } else {
+                this.message(view)
+            }
+        }
     }
 
     private fun message(view : View) {
